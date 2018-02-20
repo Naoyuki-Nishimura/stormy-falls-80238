@@ -1,0 +1,13 @@
+
+<div class="container"> <br/>
+ <h5 style="padding-left: 5px;"><%= @user.name %>さんの投稿一覧</h5><br/>
+ <% @user.posts.each do |post| %>
+ <ul class="collection z-depth-2" style="width: 100%; float:left; margin-left: 5px;">
+      <li class="collection-item">
+          <i class="tiny material-icons">mode_edits</i>&nbsp;
+          <%= link_to post.title, "/posts/#{post.id}" %>
+      </li>
+ </ul>
+ <% end %>
+
+</div>

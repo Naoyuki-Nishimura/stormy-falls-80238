@@ -1,0 +1,41 @@
+//*= require trix
+
+@import "materialize";
+@import "toastr";
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+.side-font {
+    font-size: 5px;
+}
+
+
+
+.posts-new textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 300px;
+  border: 2px solid rgb(216, 218, 223);
+  resize: none;
+}
+
+.posts-new textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+
+
+trix-editor  {
+    min-height: 250px;
+}
+

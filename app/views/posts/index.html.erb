@@ -1,0 +1,19 @@
+<%= link_to "投稿する", "/posts/new", class: "waves-effect waves-light btn", style: "position: absolute; left:340px; top:92px" %>
+<div class="container"> <br/>
+ <h5 style="padding-left: 5px;">投稿一覧</h5><br/>
+ <% @posts.each do |post| %>
+ <ul class="collection z-depth-2" style="width: 100%; float:left; margin-left: 5px;">
+      <li class="collection-item">
+          <i class="tiny material-icons">mode_edits</i>&nbsp;
+          <%= post.user.name %>さんの投稿:
+          <%= link_to post.title, "/posts/#{post.id}" %>
+      </li>
+ </ul>
+ <% end %>
+
+</div>
+
+
+
+
+

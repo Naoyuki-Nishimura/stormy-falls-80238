@@ -1,0 +1,56 @@
+
+<header>
+  <!-- Dropdown Structure -->
+<!-- For website -->
+<ul id="dropdown1" class="dropdown-content drop">
+  <li><%= link_to 'プロフィール', edit_user_registration_path %></li>
+  <li><%= link_to '私の投稿', '/posts/mypost' %></li>
+  <li class="divider"></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+</ul>
+
+<!-- For mobile -->
+<ul id="dropdown2" class="dropdown-content">
+  <li><%= link_to 'プロフィール', edit_user_registration_path %></li>
+  <li><%= link_to '私の投稿', '/posts/mypost' %></li>
+  <li class="divider"></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+</ul>
+  
+  
+  
+ <nav class="black z-depth-2">
+  <div class="nav-wrapper">
+    <%= link_to "質問フォーラム", root_path, class: "brand-logo",  style: "font-size: 22px; padding-left: 30px;" %>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <!-- This one is for website view -->
+    <ul class="right hide-on-med-and-down" style="padding-right: 25px;">
+      <li><%= link_to "投稿", "/posts/index" %></li>
+        <% if(!user_signed_in?) %>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li><%= link_to "ログイン ", new_user_session_path %></li>
+        <% else %>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+          <%= image_tag avatar_url(current_user), class: "circle responsive-img" %>&nbsp;
+          <%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a>
+        </li>
+        <% end %>
+    </ul>
+    <!-- This one is for mobile view -->
+    <ul class="side-nav" id="mobile-demo">
+        <li><%= link_to "投稿", "/posts/index" %></li>
+        <% if(!user_signed_in?) %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン ", new_user_session_path %></li>
+        <% else %>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
+            <%= image_tag avatar_url(current_user), class: "circle responsive-img" %>&nbsp;
+            <%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+  </nav>
+</header>
