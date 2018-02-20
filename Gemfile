@@ -34,6 +34,11 @@ gem 'gravatar', '~> 1.0'
 gem 'trix'
 
 gem 'activeadmin', github: 'activeadmin'
+
+
+
+
+gem 'pg', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
