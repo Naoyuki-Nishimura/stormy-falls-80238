@@ -10,7 +10,7 @@
         <div class="card-action">
           <%= link_to '編集', "/posts/#{@post.id}/edit" %>
         <% if current_user.id == @post.user_id %>
-          <%= link_to '削除', "/posts/#{@post.id}/destroy", {method: "post"} %>
+          <%= link_to '削除', "/posts/#{@post.id}/destroy", {method: "post", data: {confirm: "本当に削除してよろしいですか?"}} %>
         <% end %>
         </div>
       </div>
